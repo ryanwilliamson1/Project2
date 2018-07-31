@@ -33,6 +33,7 @@ MongoClient.connect(dbURL, function(err, database) {
 	if(err) throw err;
 	db=database.db("Dodge")
 	app.listen(59129);
+	const PORT=process.env.PORT||8000
 	console.log("Listening on port "+PORT);
 });
 }
@@ -41,7 +42,7 @@ else{
   dbURL="mongodb://admin:password123@ds245287.mlab.com:45287/heroku_zmsc5583"
   MongoClient.connect(dbURL, function(err,database){
     if(err) throw err;
-    db=database.db("Dodge")
+    db=database.db("heroku_zmsc5583")
     app.listen(PORT)
 	console.log("Listening on port "+PORT);
   });
