@@ -29,23 +29,21 @@ var dbURL="mongodb://admin:password@localhost:27017/Dodge"
 
 var args = process.argv.slice(2)
 if(args=="dev"){
-MongoClient.connect(dbURL, 
-          function(err, database) {
-  if(err) throw err;
-  db=database.db("Dodge")
- 
-
-  app.listen(59129);
+MongoClient.connect(dbURL, function(err, database) {
+	if(err) throw err;
+	db=database.db("Dodge")
+	app.listen(59129);
+	console.log("Listening on port "+PORT);
 });
 }
 else{
   const PORT=process.env.PORT||8000
-  var dbURL="mongodb://admin:password@localhost:27017/Dodge"
+  dbURL="mongodb://admin:password123@ds245287.mlab.com:45287/heroku_zmsc5583"
   MongoClient.connect(dbURL, function(err,database){
     if(err) throw err;
     db=database.db("Dodge")
     app.listen(PORT)
-   
+	console.log("Listening on port "+PORT);
   });
 }
 app.get('/', function(req, res){
