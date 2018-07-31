@@ -1,8 +1,8 @@
 {
-  "name": "expressDemo",
+  "name": "Project2",
   "version": "1.0.0",
   "description": "",
-  "main": "serverE.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
